@@ -98,7 +98,7 @@ slackEvents.on('message', async (event) => {
         ];
 
 
-        if (event.text == "meni") {
+        if (event.text == "meni" || event.text == "Reminder: meni.") {
             const req = http.request(options, res => {
                 console.log(`statusCode: ${res.statusCode}`)
                 var str = "";
