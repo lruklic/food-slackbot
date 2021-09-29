@@ -81,7 +81,8 @@ slackEvents.on('message', async (event) => {
                             "text": "R House",
                             "emoji": true
                         },
-                        "value": "click_me_123"
+                        "value": "click_me_123",
+                        "url": "https://www.facebook.com/rhousezg/"
                     },
                     {
                         "type": "button",
@@ -91,7 +92,7 @@ slackEvents.on('message', async (event) => {
                             "emoji": true
                         },
                         "value": "click_me_123",
-                        "url": "https://google.com"
+                        "url": "https://www.spareribsgrill.hr/dnevna-jela/"
                     }
                 ]
             }
