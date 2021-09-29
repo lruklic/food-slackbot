@@ -48,24 +48,24 @@ slackEvents.on('message', async (event) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "*R House*\n:star::star::star::star: 1528 reviews\n They do have some vegan options, like the roti and curry, plus they have a ton of salad stuff and noodles can be ordered without meat!! They have something for everyone here"
+                    "text": "*R House*\n:star::star::star::star: 163 reviews\n"
                 },
                 "accessory": {
                     "type": "image",
-                    "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/c7ed05m9lC2EmA3Aruue7A/o.jpg",
-                    "alt_text": "alt text for image"
+                    "image_url": "https://cdn.website.dish.co/media/71/61/1117573/R-HOUSE-56980876-2002585373201963-1412179298395095040-o.jpg",
+                    "alt_text": "R House image"
                 }
             },
             {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "*Spare Ribs*\n:star::star::star::star: 2082 reviews\n I would really recommend the  Yum Koh Moo Yang - Spicy lime dressing and roasted quick marinated pork shoulder, basil leaves, chili & rice powder."
+                    "text": "*Spare Ribs*\n:star::star::star::star: 1404 reviews\n"
                 },
                 "accessory": {
                     "type": "image",
-                    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/DawwNigKJ2ckPeDeDM7jAg/o.jpg",
-                    "alt_text": "alt text for image"
+                    "image_url": "https://gastro.24sata.hr/media/img/28/96/1b52429fe25a69ca44e1.jpeg",
+                    "alt_text": "Spare Ribs image"
                 }
             },
             {
@@ -113,13 +113,13 @@ slackEvents.on('message', async (event) => {
                     for (var i = 0; i < fetchedMenu.menuToday.rhouse.length; i++) {
                         rhouseMenu += fetchedMenu.menuToday.rhouse[i].replace(/\n/g, ", ") + "\n";
                     }
-                    menu[2].text.text = "*R House*\n:star::star::star::star: 28 reviews\n" + rhouseMenu;
+                    menu[2].text.text = "*R House*\n:star::star::star::star: 163 reviews\n" + rhouseMenu;
     
                     var spareribsMenu = "";
                     for (var i = 0; i < fetchedMenu.menuToday.spareribs.length; i++) {
                         spareribsMenu += (i+1) + ". " + capitalizeFirstLetter(fetchedMenu.menuToday.spareribs[i].replace(/\n/g, ", ").toLowerCase()) + "\n";
                     }
-                    menu[3].text.text = "*Spare ribs*\n:star::star::star::star: 28 reviews\n" + spareribsMenu;
+                    menu[3].text.text = "*Spare ribs*\n:star::star::star::star: 1404 reviews\n" + spareribsMenu;
     
                     client.chat.postMessage({channel, token, blocks: menu})
                 })
