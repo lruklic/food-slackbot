@@ -100,6 +100,11 @@ slackEvents.on('message', async (event) => {
 
 
         if (event.text == "meni" || event.text == "Reminder: meni.") {
+            var date = new Date();
+/*             if (date.getDate() == 5 && (date.getMonth() + 1) == 10) {
+                client.chat.postMessage({channel, token, text : "Custom message"});
+            } */
+
             const req = http.request(options, res => {
                 console.log(`statusCode: ${res.statusCode}`)
                 var str = "";
@@ -124,7 +129,7 @@ slackEvents.on('message', async (event) => {
     
                     client.chat.postMessage({channel, token, blocks: menu})
                 })
-            });
+            }); 
     
             req.end();
         }
