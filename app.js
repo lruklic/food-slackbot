@@ -48,7 +48,7 @@ slackEvents.on('message', async (event) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "*R House*\n:star::star::star::star: 163 reviews\n"
+                    "text": "*R House*\n:star::star::star::star: 163 reviews <tel:0996579184|:iphone:>\n"
                 },
                 "accessory": {
                     "type": "image",
@@ -60,7 +60,7 @@ slackEvents.on('message', async (event) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "*Spare Ribs*\n:star::star::star::star: 1404 reviews\n"
+                    "text": "*Spare Ribs*\n:star::star::star::star: 1404 reviews <tel:013861919|:iphone:>\n"
                 },
                 "accessory": {
                     "type": "image",
