@@ -98,6 +98,13 @@ slackEvents.on('message', async (event) => {
             }
         ];
 
+        if (event.text == "test") {
+            client.chat.postMessage({channel, token, text: "Test i tebi!"})
+        }
+
+/*         if (event.text == "menuu") {
+            client.chat.postMessage({channel, token, blocks: menu})
+        } */
 
         if (event.text == "meni" || event.text == "Reminder: meni.") {
             var date = new Date();
