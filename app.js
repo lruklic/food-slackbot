@@ -126,13 +126,26 @@ slackEvents.on('message', async (event) => {
                     for (var i = 0; i < fetchedMenu.menuToday.rhouse.length; i++) {
                         rhouseMenu += fetchedMenu.menuToday.rhouse[i].replace(/\n/g, ", ") + "\n";
                     }
-                    menu[2].text.text = "*R House*\n:star::star::star::star: 163 reviews\n" + rhouseMenu;
+
+                    menu[2].text.text = "*R House*\n:star::star::star::star: 163 reviews <tel:0996579184|:iphone:>\n";
+                    if (rhouseMenu && rhouseMenu.length > 0) {
+                        menu[2].text.text += rhouseMenu;
+                    } else {
+                        menu[2].text.text += "Oops, zasad nema menija. Provjerite na web stranici ili odite u Spare Ribs.";
+                    }
+                    
     
                     var spareribsMenu = "";
                     for (var i = 0; i < fetchedMenu.menuToday.spareribs.length; i++) {
                         spareribsMenu += (i+1) + ". " + capitalizeFirstLetter(fetchedMenu.menuToday.spareribs[i].replace(/\n/g, ", ").toLowerCase()) + "\n";
                     }
-                    menu[3].text.text = "*Spare ribs*\n:star::star::star::star: 1404 reviews\n" + spareribsMenu;
+
+                    menu[3].text.text = "*Spare ribs*\n:star::star::star::star: 1404 reviews <tel:013861919|:iphone:>\n";
+                    if (spareribsMenu && spareribsMenu.length > 0) {
+                        menu[3].text.text += spareribsMenu;
+                    } else {
+                        menu[3].text.text += "Oops, zasad nema menija. Provjerite na web stranici ili odite u R House.";
+                    }
     
                     client.chat.postMessage({channel, token, blocks: menu})
                 })
