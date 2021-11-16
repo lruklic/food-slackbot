@@ -152,14 +152,19 @@ slackEvents.on('message', async (event) => {
             }); 
     
             req.end();
+        } else if (event.text == "otvori prozor" || event.text == "Sezame otvori se") {
+            const req = http.request({host: 'localhost', port: 3001, path: '/window/open', method: 'GET'}, res => { console.log("Window open sent") });
+            req.end();
+        } else if (event.text == "zatvori prozor" || event.text == "Sezame zatvori se") {
+            const req = http.request({host: 'localhost', port: 3001, path: '/window/close', method: 'GET'}, res => { console.log("Window close sent") });
+            req.end();
         }
-
         
     }
 })
 
 app.listen(PORT, () => {
-    console.log(`App listening at http://localhost:${PORT}`)
+    console.log(`SlackBot app listening at http://localhost:${PORT}`)
 })
 
 function capitalizeFirstLetter(string) {
